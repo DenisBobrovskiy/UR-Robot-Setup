@@ -22,15 +22,30 @@ class StateManager:
         self._init_default_positions()
         self._load_positions()
     
+    # def _init_default_positions(self):
+    #     """Initialize default named positions."""
+    #     self._named_positions = {
+    #         "home": [0.0, -1.57, 1.57, -1.57, -1.57, 0.0],
+    #         "up": [0.0, -1.57, 0.0, -1.57, -1.57, 0.0],
+    #         "forward": [0.0, -0.785, 1.57, -2.355, -1.57, 0.0],
+    #         "left": [1.57, -1.57, 1.57, -1.57, -1.57, 0.0],
+    #         "right": [-1.57, -1.57, 1.57, -1.57, -1.57, 0.0],
+    #         "zero": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #     }
+    
     def _init_default_positions(self):
         """Initialize default named positions."""
         self._named_positions = {
-            "home": [0.0, -1.57, 1.57, -1.57, -1.57, 0.0],
-            "up": [0.0, -1.57, 0.0, -1.57, -1.57, 0.0],
-            "forward": [0.0, -0.785, 1.57, -2.355, -1.57, 0.0],
-            "left": [1.57, -1.57, 1.57, -1.57, -1.57, 0.0],
-            "right": [-1.57, -1.57, 1.57, -1.57, -1.57, 0.0],
+            # New home position matching robot's current state
+            "home": [-3.16, -3.12, 1.55, -1.57, -1.57, 0.0],
+            
+            # Alternative positions
             "zero": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "straight_up": [0.0, -1.57, 0.0, -1.57, 0.0, 0.0],
+            "forward": [0.0, -0.785, 1.57, -2.355, -1.57, 0.0],
+            
+            # Keep old home as alternative
+            "home_alt": [0.0, -1.57, 1.57, -1.57, -1.57, 0.0],
         }
     
     def _load_positions(self):
