@@ -89,7 +89,7 @@ class PoseToRobotMapper:
         self.angle_history = []
         return self.reference_pose is not None
     
-    def pose_to_deltas(self, landmarks, max_delta_deg: float = 10.0) -> Optional[List[float]]:
+    def pose_to_deltas(self, landmarks, max_delta_deg: float = 12.0) -> Optional[List[float]]:
         """
         Convert pose to joint DELTAS (not absolute positions).
         Returns deltas in radians, clamped to max_delta_deg.
