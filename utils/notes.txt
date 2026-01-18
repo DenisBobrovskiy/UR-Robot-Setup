@@ -1,3 +1,4 @@
 LAUNCH CONTAINER: sudo docker run -it --rm --network host --device /dev/dri:/dev/dri --env DISPLAY=$DISPLAY --env QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/main/Projects/hackathons/robot-rave/src_ur_simulations:/home/USERNAME/workspace --name ur_sim ur_ros_sim 
-LAUNCH INSIDE CONTAINER: ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur12e use_mock_hardware:=true launch_rviz:=true robot_ip:=192.168.56.101 kinematics_params_file:="${PWD}/calib.yaml"
+EXTRACT CALIBRATION (INSIDE CONTAINER): ros2 launch ur_calibration calibration_correction.launch.py robot_ip:=192.168.56.101 target_filename:="${PWD}/my_robot_calibration.yaml"
+LAUNCH CONTROLLER (INSIDE CONTAINER): ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur12e use_mock_hardware:=true use_headless:=true launch_rviz:=true robot_ip:=192.168.56.101 kinematics_params_file:="${PWD}/my_robot_calibration.yaml"
 LAUNCH RVIZ: ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur12e launch_rviz:=true
