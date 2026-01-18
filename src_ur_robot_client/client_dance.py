@@ -23,7 +23,7 @@ async def main():
         print("\n🎵 Dancing forever! Press Ctrl+C to stop 🎵\n")
         
         # Dance parameters
-        wobble = 0.2       # ~6 degrees
+        wobble = 0.15       # ~6 degrees
         small = 0.05       # ~3 degrees
         speed = 0.4        # seconds per move
         
